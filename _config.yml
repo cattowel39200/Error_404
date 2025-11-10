@@ -5,15 +5,15 @@
 title: "Error 404: 개발자를 찾을 수 없음"
 tagline: "개발자를 찾을 수 없습니다. 하지만 찾는 중입니다."
 description: "초보 개발자의 에러, 삽질, 그리고 성장 이야기"
-url: "https://yourusername.github.io" # GitHub Pages URL로 변경 필요
-baseurl: "" # 저장소 이름이 yourusername.github.io가 아닌 경우 "/repository-name" 형식으로 입력
+url: "https://cattowel39200.github.io"
+baseurl: "/Error_404"
 
 # 작성자 정보
 author:
   name: "Error404 Developer"
   email: "dev@error404.blog"
   bio: "404 상태에서 200 OK를 향해 가는 중"
-  github: "yourusername" # 본인의 GitHub 계정명으로 변경
+  github: "cattowel39200"
 
 # SEO 설정
 lang: ko-KR
@@ -21,7 +21,7 @@ timezone: Asia/Seoul
 
 # 소셜 미디어 (선택사항)
 social:
-  github: "yourusername"
+  github: "cattowel39200"
   # twitter: "yourusername"
   # linkedin: "yourusername"
 
