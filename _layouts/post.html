@@ -1,0 +1,85 @@
+---
+layout: default
+---
+
+<article class="post">
+    <header class="post-header">
+        <div class="post-status">
+            {% if page.status %}
+            <span class="status-badge status-{{ page.status }}">{{ page.status }}</span>
+            {% endif %}
+            {% if page.category %}
+            <span class="category-badge">{{ page.category }}</span>
+            {% endif %}
+        </div>
+
+        <h1 class="post-title">{{ page.title }}</h1>
+
+        {% if page.description %}
+        <p class="post-description">{{ page.description }}</p>
+        {% endif %}
+
+        <div class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}">
+                📅 {{ page.date | date: "%Y년 %m월 %d일" }}
+            </time>
+            {% if page.author %}
+            <span class="post-author">✍️ {{ page.author }}</span>
+            {% endif %}
+            {% if page.reading_time %}
+            <span class="reading-time">⏱️ {{ page.reading_time }}</span>
+            {% endif %}
+        </div>
+
+        {% if page.tags %}
+        <div class="post-tags">
+            {% for tag in page.tags %}
+            <span class="tag">#{{ tag }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </header>
+
+    <div class="post-content">
+        {{ content }}
+    </div>
+
+    <footer class="post-footer">
+        <div class="post-share">
+            <h3>이 글이 도움이 되셨나요?</h3>
+            <p>같은 문제를 겪으셨다면 댓글로 여러분의 해결법을 공유해주세요!</p>
+        </div>
+
+        {% if page.prev_post or page.next_post %}
+        <nav class="post-navigation">
+            {% if page.prev_post %}
+            <div class="nav-prev">
+                <span class="nav-label">← 이전 글</span>
+                <a href="{{ page.prev_post }}">이전 글 보기</a>
+            </div>
+            {% endif %}
+            {% if page.next_post %}
+            <div class="nav-next">
+                <span class="nav-label">다음 글 →</span>
+                <a href="{{ page.next_post }}">다음 글 보기</a>
+            </div>
+            {% endif %}
+        </nav>
+        {% endif %}
+
+        <div class="back-to-list">
+            <a href="{{ '/' | relative_url }}">← 글 목록으로 돌아가기</a>
+        </div>
+    </footer>
+</article>
+
+{% if page.related_posts %}
+<section class="related-posts">
+    <h2>관련 글</h2>
+    <ul>
+        {% for post_url in page.related_posts %}
+        <li><a href="{{ post_url }}">관련 글 보기</a></li>
+        {% endfor %}
+    </ul>
+</section>
+{% endif %}

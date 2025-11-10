@@ -1,0 +1,711 @@
+/* Error 404 블로그 스타일 */
+
+/* ========================================
+   기본 설정
+   ======================================== */
+
+:root {
+    /* 컬러 팔레트 */
+    --error-red: #FF6B6B;
+    --success-green: #4ECDC4;
+    --warning-yellow: #FFE66D;
+    --info-blue: #95E1D3;
+    --dark-bg: #1A1A2E;
+    --darker-bg: #16213E;
+    --light-text: #EAEAEA;
+    --gray-text: #A0A0A0;
+    --code-bg: #2D3748;
+
+    /* 폰트 */
+    --font-sans: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'Fira Code', 'Consolas', 'Monaco', monospace;
+
+    /* 간격 */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* 기타 */
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+a {
+    color: var(--success-green);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--warning-yellow);
+    text-decoration: underline;
+}
+
+/* ========================================
+   헤더
+   ======================================== */
+
+.site-header {
+    background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+    padding: var(--spacing-lg) 0;
+    border-bottom: 3px solid var(--error-red);
+    margin-bottom: var(--spacing-xl);
+}
+
+.header-content {
+    text-align: center;
+}
+
+.logo {
+    margin-bottom: var(--spacing-sm);
+}
+
+.logo a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--error-red);
+    text-decoration: none;
+}
+
+.error-code {
+    background-color: var(--code-bg);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    border: 2px solid var(--error-red);
+}
+
+.error-symbol {
+    font-size: 2rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.site-title a {
+    color: var(--light-text);
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.site-tagline {
+    color: var(--gray-text);
+    font-style: italic;
+    margin-top: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+}
+
+.site-nav {
+    margin-top: var(--spacing-md);
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.site-nav a {
+    color: var(--gray-text);
+    font-weight: 500;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.site-nav a:hover {
+    background-color: var(--code-bg);
+    color: var(--success-green);
+    text-decoration: none;
+}
+
+/* ========================================
+   메인 컨텐츠
+   ======================================== */
+
+.site-main {
+    min-height: 60vh;
+    padding-bottom: var(--spacing-xl);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-xl) 0;
+}
+
+.error-box {
+    background-color: var(--darker-bg);
+    border: 3px solid var(--error-red);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+}
+
+.error-code-large {
+    font-family: var(--font-mono);
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--error-red);
+    line-height: 1;
+    margin-bottom: var(--spacing-sm);
+}
+
+.error-message h2 {
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.subtitle {
+    color: var(--gray-text);
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--gray-text);
+    line-height: 1.8;
+}
+
+.hero-description p {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Categories Section */
+.categories-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.categories-section h2 {
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.8rem;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.category-card {
+    background-color: var(--darker-bg);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--gray-text);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.category-card.error-404 { border-left-color: var(--error-red); }
+.category-card.error-500 { border-left-color: #E74C3C; }
+.category-card.status-301 { border-left-color: var(--info-blue); }
+.category-card.status-200 { border-left-color: var(--success-green); }
+.category-card.status-100 { border-left-color: var(--warning-yellow); }
+
+.category-card h3 {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.category-card p {
+    color: var(--gray-text);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.post-count {
+    font-size: 0.8rem;
+    color: var(--gray-text);
+    font-style: italic;
+}
+
+/* Recent Posts */
+.recent-posts {
+    margin-bottom: var(--spacing-xl);
+}
+
+.recent-posts h2 {
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.8rem;
+}
+
+.posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.post-item {
+    background-color: var(--darker-bg);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    border-left: 3px solid var(--success-green);
+    transition: var(--transition);
+}
+
+.post-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.post-item-header {
+    display: flex;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-xs);
+}
+
+.category-badge,
+.status-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-family: var(--font-mono);
+}
+
+.category-badge {
+    background-color: var(--code-bg);
+    color: var(--info-blue);
+}
+
+.status-badge {
+    background-color: var(--code-bg);
+}
+
+.status-badge.status-resolved { color: var(--success-green); }
+.status-badge.status-progress { color: var(--warning-yellow); }
+.status-badge.status-error { color: var(--error-red); }
+
+.post-item-title {
+    margin-bottom: var(--spacing-xs);
+}
+
+.post-item-title a {
+    color: var(--light-text);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.post-item-title a:hover {
+    color: var(--success-green);
+}
+
+.post-item-description {
+    color: var(--gray-text);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+}
+
+.post-item-meta {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    flex-wrap: wrap;
+    color: var(--gray-text);
+    font-size: 0.9rem;
+}
+
+.post-item-tags {
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+}
+
+.tag {
+    font-size: 0.8rem;
+    color: var(--success-green);
+    font-weight: 500;
+}
+
+/* About Section */
+.about-section {
+    background-color: var(--darker-bg);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    border: 2px dashed var(--gray-text);
+}
+
+.about-section h2 {
+    margin-bottom: var(--spacing-md);
+}
+
+.about-content ul {
+    list-style: none;
+    margin: var(--spacing-md) 0;
+}
+
+.about-content li {
+    padding: var(--spacing-xs) 0;
+}
+
+.cta {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm);
+    background-color: var(--code-bg);
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.status-current {
+    color: var(--error-red);
+    font-family: var(--font-mono);
+    font-weight: 700;
+}
+
+.status-goal {
+    color: var(--success-green);
+    font-family: var(--font-mono);
+    font-weight: 700;
+}
+
+/* ========================================
+   포스트 상세 페이지
+   ======================================== */
+
+.post {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.post-header {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--code-bg);
+}
+
+.post-status {
+    display: flex;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+}
+
+.post-title {
+    font-size: 2.5rem;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-sm);
+    color: var(--light-text);
+}
+
+.post-description {
+    font-size: 1.2rem;
+    color: var(--gray-text);
+    margin-bottom: var(--spacing-md);
+}
+
+.post-meta {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    color: var(--gray-text);
+    margin-bottom: var(--spacing-sm);
+}
+
+.post-tags {
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+}
+
+.post-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--light-text);
+}
+
+.post-content h2 {
+    font-size: 2rem;
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--success-green);
+}
+
+.post-content h3 {
+    font-size: 1.5rem;
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    color: var(--info-blue);
+}
+
+.post-content h4 {
+    font-size: 1.2rem;
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.post-content p {
+    margin-bottom: var(--spacing-md);
+}
+
+.post-content ul,
+.post-content ol {
+    margin-bottom: var(--spacing-md);
+    margin-left: var(--spacing-lg);
+}
+
+.post-content li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.post-content code {
+    font-family: var(--font-mono);
+    background-color: var(--code-bg);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: var(--warning-yellow);
+}
+
+.post-content pre {
+    background-color: var(--code-bg);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    overflow-x: auto;
+    margin-bottom: var(--spacing-md);
+    border-left: 4px solid var(--success-green);
+}
+
+.post-content pre code {
+    background: none;
+    padding: 0;
+    color: var(--light-text);
+}
+
+.post-content blockquote {
+    border-left: 4px solid var(--info-blue);
+    padding-left: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    color: var(--gray-text);
+    font-style: italic;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin: var(--spacing-md) 0;
+}
+
+.post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-md) 0;
+}
+
+.post-content th,
+.post-content td {
+    border: 1px solid var(--code-bg);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    text-align: left;
+}
+
+.post-content th {
+    background-color: var(--code-bg);
+    font-weight: 700;
+}
+
+/* Post Footer */
+.post-footer {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 2px solid var(--code-bg);
+}
+
+.post-share {
+    background-color: var(--darker-bg);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.post-share h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--success-green);
+}
+
+.post-navigation {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.nav-prev,
+.nav-next {
+    background-color: var(--darker-bg);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+}
+
+.nav-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--gray-text);
+    margin-bottom: var(--spacing-xs);
+}
+
+.back-to-list {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+}
+
+.back-to-list a {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background-color: var(--code-bg);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.back-to-list a:hover {
+    background-color: var(--success-green);
+    color: var(--dark-bg);
+    text-decoration: none;
+}
+
+/* ========================================
+   푸터
+   ======================================== */
+
+.site-footer {
+    background-color: var(--darker-bg);
+    border-top: 3px solid var(--error-red);
+    padding: var(--spacing-xl) 0;
+    margin-top: var(--spacing-xl);
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-text {
+    color: var(--gray-text);
+    margin-bottom: var(--spacing-sm);
+}
+
+.copyright {
+    margin-bottom: var(--spacing-md);
+}
+
+.status {
+    display: block;
+    margin-top: var(--spacing-xs);
+    font-family: var(--font-mono);
+}
+
+.status-code {
+    color: var(--error-red);
+    font-weight: 700;
+}
+
+.status-target {
+    color: var(--success-green);
+    font-weight: 700;
+}
+
+.social-links {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+}
+
+.social-links a {
+    color: var(--gray-text);
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--success-green);
+}
+
+/* ========================================
+   반응형
+   ======================================== */
+
+@media (max-width: 768px) {
+    .error-code-large {
+        font-size: 3rem;
+    }
+
+    .error-message h2 {
+        font-size: 1.4rem;
+    }
+
+    .site-title a {
+        font-size: 1.4rem;
+    }
+
+    .post-title {
+        font-size: 1.8rem;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   유틸리티
+   ======================================== */
+
+.no-posts {
+    text-align: center;
+    color: var(--gray-text);
+    padding: var(--spacing-xl);
+    font-style: italic;
+}
+
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--code-bg);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--error-red);
+}

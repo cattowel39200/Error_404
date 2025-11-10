@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'ko-KR' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+
+    <!-- SEO Tags -->
+    {% seo %}
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="{{ '/' | relative_url }}">
+                        <span class="error-code">ERROR 404</span>
+                        <span class="error-symbol">⚠️</span>
+                    </a>
+                </div>
+                <h1 class="site-title">
+                    <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+                </h1>
+                <p class="site-tagline">{{ site.tagline }}</p>
+                <nav class="site-nav">
+                    <a href="{{ '/' | relative_url }}">홈</a>
+                    <a href="{{ '/about' | relative_url }}">소개</a>
+                    <a href="{{ '/categories' | relative_url }}">카테고리</a>
+                    {% if site.author.github %}
+                    <a href="https://github.com/{{ site.author.github }}" target="_blank">GitHub</a>
+                    {% endif %}
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+            {{ content }}
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">
+                    {{ site.description }}
+                </p>
+                <p class="copyright">
+                    &copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}.
+                    <span class="status">현재 상태: <span class="status-code">404</span> → <span class="status-target">200 OK</span></span>
+                </p>
+                <div class="social-links">
+                    {% if site.author.github %}
+                    <a href="https://github.com/{{ site.author.github }}" target="_blank">GitHub</a>
+                    {% endif %}
+                    <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Google Analytics (설정 시) -->
+    {% if site.google_analytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics }}');
+    </script>
+    {% endif %}
+</body>
+</html>
