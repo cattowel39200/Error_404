@@ -4,16 +4,57 @@ title: Home
 ---
 
 <div class="hero">
-    <div class="error-box">
-        <div class="error-code-large">404</div>
-        <div class="error-message">
-            <h2>개발자를 찾을 수 없습니다</h2>
-            <p class="subtitle">하지만 찾는 중입니다...</p>
+    <div class="terminal-box">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="terminal-button red"></span>
+                <span class="terminal-button yellow"></span>
+                <span class="terminal-button green"></span>
+            </div>
+            <span class="terminal-title">error404@dev-blog: ~</span>
+        </div>
+        <div class="terminal-content">
+            <div class="terminal-line">
+                <span class="terminal-prompt">$</span>
+                <span class="terminal-command">whoami</span>
+            </div>
+            <div class="terminal-output">Error 404: 개발자를 찾을 수 없음</div>
+
+            <div class="terminal-line" style="margin-top: 1rem;">
+                <span class="terminal-prompt">$</span>
+                <span class="terminal-command">cat status.txt</span>
+            </div>
+            <div class="terminal-output">현재 상태: 초보 개발자</div>
+            <div class="terminal-output">디버깅 중... ████████░░ 80%</div>
+
+            <div class="terminal-line" style="margin-top: 1rem;">
+                <span class="terminal-prompt">$</span>
+                <span class="terminal-command">echo "목표"</span>
+            </div>
+            <div class="terminal-success">✓ 200 OK 달성을 향해 코딩 중!</div>
+
+            <div class="terminal-line" style="margin-top: 1rem;">
+                <span class="terminal-prompt">$</span>
+                <span class="terminal-cursor"></span>
+            </div>
         </div>
     </div>
-    <div class="hero-description">
+
+    <div class="welcome-message">
+        <h2>🔍 환영합니다!</h2>
+        <p>여기는 <strong>실제 에러가 아니라</strong> 초보 개발자의 성장 블로그입니다 😊</p>
         <p>{{ site.description }}</p>
-        <p>초보 개발자의 에러 메시지, 삽질 기록, 그리고 작은 성공들을 기록합니다.</p>
+        <div class="status-badges">
+            <span class="status-badge-large current">현재: 404 Not Found</span>
+            <span style="font-size: 1.5rem;">→</span>
+            <span class="status-badge-large target">목표: 200 OK</span>
+        </div>
+    </div>
+
+    <div class="hero-description">
+        <p>💡 에러 메시지가 무섭지 않은 개발자가 되기 위한 여정</p>
+        <p>🛠️ 실제로 겪은 에러, 삽질 기록, 그리고 작은 성공들을 기록합니다</p>
+        <p>📚 초보자도 이해할 수 있는 쉬운 설명을 지향합니다</p>
     </div>
 </div>
 
