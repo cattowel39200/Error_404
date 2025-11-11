@@ -163,6 +163,74 @@ a:hover {
     padding-bottom: var(--spacing-xl);
 }
 
+/* Layout with Sidebar */
+.layout-wrapper {
+    display: flex;
+    gap: var(--spacing-xl);
+    align-items: flex-start;
+}
+
+/* Sidebar */
+.sidebar {
+    flex: 0 0 250px;
+    position: sticky;
+    top: var(--spacing-lg);
+}
+
+.sidebar-content {
+    background-color: var(--darker-bg);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    border: 2px solid var(--code-bg);
+}
+
+.sidebar-title {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--success-green);
+    font-family: var(--font-mono);
+}
+
+.category-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.category-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    color: var(--gray-text);
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.category-link:hover {
+    background-color: var(--code-bg);
+    color: var(--success-green);
+    text-decoration: none;
+    transform: translateX(5px);
+}
+
+.category-link.active {
+    background-color: var(--code-bg);
+    color: var(--success-green);
+    border-left: 3px solid var(--success-green);
+}
+
+.category-icon {
+    font-size: 1.2rem;
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
+
 /* Hero Section */
 .hero {
     margin-bottom: var(--spacing-xl);
@@ -379,7 +447,7 @@ a:hover {
     font-style: italic;
 }
 
-/* Recent Posts */
+/* Recent Posts - Grid Tile Layout */
 .recent-posts {
     margin-bottom: var(--spacing-xl);
 }
@@ -389,6 +457,92 @@ a:hover {
     font-size: 1.8rem;
 }
 
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.post-tile {
+    background-color: var(--darker-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 2px solid var(--code-bg);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.post-tile:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(78, 205, 196, 0.2);
+    border-color: var(--success-green);
+}
+
+.post-tile-image {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, var(--code-bg) 0%, var(--darker-bg) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    border-bottom: 2px solid var(--code-bg);
+}
+
+.post-tile-content {
+    padding: var(--spacing-md);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-tile-header {
+    display: flex;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.post-tile-title {
+    margin-bottom: var(--spacing-sm);
+    flex: 1;
+}
+
+.post-tile-title a {
+    color: var(--light-text);
+    font-size: 1.3rem;
+    font-weight: 700;
+    display: block;
+}
+
+.post-tile-title a:hover {
+    color: var(--success-green);
+}
+
+.post-tile-description {
+    color: var(--gray-text);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+    flex: 1;
+}
+
+.post-tile-footer {
+    margin-top: auto;
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--code-bg);
+}
+
+.post-tile-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--gray-text);
+    font-size: 0.85rem;
+}
+
+/* Old post-item styles for compatibility */
 .posts-list {
     display: flex;
     flex-direction: column;
@@ -784,12 +938,18 @@ a:hover {
    ======================================== */
 
 @media (max-width: 768px) {
-    .error-code-large {
-        font-size: 3rem;
+    .layout-wrapper {
+        flex-direction: column;
     }
 
-    .error-message h2 {
-        font-size: 1.4rem;
+    .sidebar {
+        position: static;
+        flex: 1;
+        width: 100%;
+    }
+
+    .posts-grid {
+        grid-template-columns: 1fr;
     }
 
     .site-title a {
@@ -803,6 +963,10 @@ a:hover {
     .categories-grid {
         grid-template-columns: 1fr;
     }
+
+    .terminal-content {
+        font-size: 0.9rem;
+    }
 }
 
 /* ========================================
@@ -813,7 +977,18 @@ a:hover {
     text-align: center;
     color: var(--gray-text);
     padding: var(--spacing-xl);
-    font-style: italic;
+    background-color: var(--darker-bg);
+    border-radius: var(--border-radius);
+    border: 2px dashed var(--code-bg);
+}
+
+.no-posts p {
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.1rem;
+}
+
+.no-posts p:first-child {
+    font-size: 1.5rem;
 }
 
 /* 스크롤바 스타일 */

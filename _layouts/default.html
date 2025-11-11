@@ -47,7 +47,30 @@
 
     <main class="site-main">
         <div class="container">
-            {{ content }}
+            <div class="layout-wrapper">
+                <aside class="sidebar">
+                    <div class="sidebar-content">
+                        <h3 class="sidebar-title">📂 카테고리</h3>
+                        <nav class="category-nav">
+                            <a href="{{ '/' | relative_url }}" class="category-link {% if page.url == '/' %}active{% endif %}">
+                                <span class="category-icon">🏠</span> 전체보기
+                            </a>
+                            <a href="{{ '/category/my-lisp' | relative_url }}" class="category-link">
+                                <span class="category-icon">📝</span> MY LISP
+                            </a>
+                            <a href="{{ '/category/office-automation' | relative_url }}" class="category-link">
+                                <span class="category-icon">⚙️</span> 사무자동화
+                            </a>
+                            <a href="{{ '/category/ai' | relative_url }}" class="category-link">
+                                <span class="category-icon">🤖</span> AI활용
+                            </a>
+                        </nav>
+                    </div>
+                </aside>
+                <div class="main-content">
+                    {{ content }}
+                </div>
+            </div>
         </div>
     </main>
 
