@@ -191,11 +191,11 @@ GGGG 실행 → 실제: 18개
 
 ## 관련 리습
 
-- [BRN - 블록명 변경](../2025-01-15-autocad-block-rename-lisp)
-- [TTC - 텍스트 교환](../2025-01-16-autocad-text-swap-lisp)
-- [LOOO - 레이어 단독 표시](../2025-01-17-autocad-layer-isolate-lisp)
-- [COOO - 숫자 추출 복사](../2025-01-18-autocad-extract-numbers-lisp)
-- [TTR - 텍스트 연속 교체](../2025-01-19-autocad-text-repeat-copy-lisp)
-- [JJJ - 폴리라인 합치기](../2025-01-20-autocad-polyline-join-z-coordinate)
-- [BLDEL - 해치 삭제](../2025-01-21-autocad-delete-all-hatches)
-- [BCENT - 블록 중심 기준점](../2025-01-22-autocad-block-center-basepoint)
+- [BRN - 블록명 변경](/my-lisp/2025/01/15/autocad-block-rename-lisp/)
+- [TTC - 텍스트 교환](/my-lisp/2025/01/16/autocad-text-swap-lisp/)
+- [LOOO - 레이어 단독 표시](/my-lisp/2025/01/17/autocad-layer-isolate-lisp/)
+- [COOO - 숫자 추출 복사](/my-lisp/2025/01/18/autocad-extract-numbers-lisp/)
+- [TTR - 텍스트 연속 교체](/my-lisp/2025/01/19/autocad-text-repeat-copy-lisp/)
+- [JJJ - 폴리라인 합치기](/my-lisp/2025/01/20/autocad-polyline-join-z-coordinate/)
+- [BLDEL - 해치 삭제](/my-lisp/2025/01/21/autocad-delete-all-hatches/)
+- [BCENT - 블록 중심 기준점](/my-lisp/2025/01/22/autocad-block-center-basepoint/)
