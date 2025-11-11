@@ -49,6 +49,21 @@ date: 2025-01-19
 
 ---
 
+## 📥 다운로드
+
+### LISP 파일 다운로드
+**파일명:** AN_TTR_글자연속교체.lsp
+
+👉 **[여기를 클릭하여 다운로드](https://raw.githubusercontent.com/cattowel39200/Error_404/main/AN_lisp/AN_TTR_%EA%B8%80%EC%9E%90%EC%97%B0%EC%86%8D%EA%B5%90%EC%B2%B4.lsp)**
+
+### 설치 방법
+1. 위 링크 클릭 → 마우스 우클릭 → "다른 이름으로 저장"
+2. 파일을 `.lsp` 확장자로 저장
+3. AutoCAD에서 `APPLOAD` 명령어 실행
+4. 저장한 `.lsp` 파일 선택하여 로드
+
+---
+
 ## 📖 사용 방법 (클릭의 향연)
 
 ### 1단계: LISP 로드
